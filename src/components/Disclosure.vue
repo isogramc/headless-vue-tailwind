@@ -6,16 +6,26 @@
         <DisclosureButton
           class="flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-purple-900 bg-purple-100 rounded-lg hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
         >
+        
           <span>What is your refund policy?</span>
           <ChevronUpIcon
             :class="open ? 'transform rotate-180' : ''"
             class="w-5 h-5 text-purple-500"
           />
         </DisclosureButton>
+        <transition
+      enter-active-class="transition duration-100 ease-out"
+      enter-from-class="transform scale-95 opacity-0"
+      enter-to-class="transform scale-100 opacity-100"
+      leave-active-class="transition duration-75 ease-out"
+      leave-from-class="transform scale-100 opacity-100"
+      leave-to-class="transform scale-95 opacity-0"
+    >
         <DisclosurePanel class="px-4 pt-4 pb-2 text-sm text-gray-500">
           If you're unhappy with your purchase for any reason, email us within
           90 days and we'll refund you in full, no questions asked.
         </DisclosurePanel>
+        </transition>
       </Disclosure>
       <Disclosure as="div" class="mt-2" v-slot="{ open }">
         <DisclosureButton
@@ -27,9 +37,18 @@
             class="w-5 h-5 text-purple-500"
           />
         </DisclosureButton>
+        <transition
+      enter-active-class="transition duration-100 ease-out"
+      enter-from-class="transform scale-95 opacity-0"
+      enter-to-class="transform scale-100 opacity-100"
+      leave-active-class="transition duration-75 ease-out"
+      leave-from-class="transform scale-100 opacity-100"
+      leave-to-class="transform scale-95 opacity-0"
+    >
         <DisclosurePanel class="px-4 pt-4 pb-2 text-sm text-gray-500">
           No.
         </DisclosurePanel>
+         </transition>
       </Disclosure>
     </div>
   </div>
